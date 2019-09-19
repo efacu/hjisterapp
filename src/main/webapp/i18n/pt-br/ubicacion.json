@@ -1,0 +1,28 @@
+{
+  "hjisterapp1App": {
+    "ubicacion": {
+      "home": {
+        "title": "Ubicacions",
+        "createLabel": "Criar novo Ubicacion",
+        "createOrEditLabel": "Criar ou editar Ubicacion",
+        "search": "Pesquisar por Ubicacion",
+        "notFound": "Nenhum Ubicacion encontrado"
+      },
+      "created": "Um novo Ubicacion foi criado com o identificador {{ param }}",
+      "updated": "Um Ubicacion foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Ubicacion foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Ubicacion {{ id }}?"
+      },
+      "detail": {
+        "title": "Ubicacion"
+      },
+      "calle": "Calle",
+      "codigoPostal": "Codigo Postal",
+      "ciudad": "Ciudad",
+      "stateProvince": "State Province",
+      "provincia": "Provincia",
+      "nombreUbicacion": "Nombre Ubicacion"
+    }
+  }
+}
