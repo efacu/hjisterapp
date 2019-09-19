@@ -1,0 +1,25 @@
+{
+  "hjisterapp1App": {
+    "provincia": {
+      "home": {
+        "title": "Provincias",
+        "createLabel": "Criar novo Provincia",
+        "createOrEditLabel": "Criar ou editar Provincia",
+        "search": "Pesquisar por Provincia",
+        "notFound": "Nenhum Provincia encontrado"
+      },
+      "created": "Um novo Provincia foi criado com o identificador {{ param }}",
+      "updated": "Um Provincia foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Provincia foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Provincia {{ id }}?"
+      },
+      "detail": {
+        "title": "Provincia"
+      },
+      "nombreProvincia": "Nombre Provincia",
+      "country": "Country",
+      "nombreProvincia": "Nombre Provincia"
+    }
+  }
+}

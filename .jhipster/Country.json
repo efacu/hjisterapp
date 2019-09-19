@@ -1,0 +1,26 @@
+{
+    "name": "Country",
+    "fields": [
+        {
+            "fieldName": "countryName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "provincia",
+            "otherEntityRelationshipName": "country",
+            "relationshipName": "nombrePais"
+        }
+    ],
+    "changelogDate": "20190919193405",
+    "entityTableName": "country",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

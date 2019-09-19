@@ -1,0 +1,47 @@
+{
+    "name": "Ubicacion",
+    "fields": [
+        {
+            "fieldName": "calle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigoPostal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ciudad",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stateProvince",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "provincia",
+            "otherEntityName": "provincia",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "ubicacion",
+            "relationshipName": "nombreUbicacion",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190919193407",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "ubicacion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
