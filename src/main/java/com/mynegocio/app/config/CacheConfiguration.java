@@ -235,6 +235,51 @@ public class CacheConfiguration {
             registerPredefinedCache(com.mynegocio.app.domain.User.class.getName() + ".authorities", new JCache<Object, Object>(
                 cacheManager.getCache(com.mynegocio.app.domain.User.class.getName() + ".authorities").getAdvancedCache(), this,
                 ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Region.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Region.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Country.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Country.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Country.class.getName() + ".nombrePais", new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Country.class.getName() + ".nombrePais").getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Provincia.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Provincia.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Provincia.class.getName() + ".nombreProvincias", new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Provincia.class.getName() + ".nombreProvincias").getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Ubicacion.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Ubicacion.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Department.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Department.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Department.class.getName() + ".employees", new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Department.class.getName() + ".employees").getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Task.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Task.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Task.class.getName() + ".jobs", new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Task.class.getName() + ".jobs").getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Employee.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Employee.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Employee.class.getName() + ".jobs", new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Employee.class.getName() + ".jobs").getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Job.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Job.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.Job.class.getName() + ".tasks", new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.Job.class.getName() + ".tasks").getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.mynegocio.app.domain.JobHistory.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.mynegocio.app.domain.JobHistory.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
             // jhipster-needle-infinispan-add-entry
             if (jHipsterProperties.getCache().getInfinispan().isStatsEnabled()) {
                 for (String cacheName : cacheManager.getCacheNames()) {

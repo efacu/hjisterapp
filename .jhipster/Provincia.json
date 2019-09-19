@@ -1,0 +1,32 @@
+{
+    "name": "Provincia",
+    "fields": [
+        {
+            "fieldName": "nombreProvincia",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "ubicacion",
+            "otherEntityRelationshipName": "provincia",
+            "relationshipName": "nombreProvincia"
+        }
+    ],
+    "changelogDate": "20190919193439",
+    "entityTableName": "provincia",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="hjisterapp1App.ubicacion.home.title">Ubicacions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-ubicacion" [routerLink]="['/ubicacion/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="hjisterapp1App.ubicacion.home.createLabel">
+            Create a new Ubicacion
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'hjisterapp1App.ubicacion.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="alert alert-warning" *ngIf="ubicacions?.length === 0">
+        <span jhiTranslate="hjisterapp1App.ubicacion.home.notFound">No ubicacions found</span>
+    </div>
+    <div class="table-responsive" *ngIf="ubicacions?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="hjisterapp1App.ubicacion.calle">Calle</span></th>
+            <th><span jhiTranslate="hjisterapp1App.ubicacion.codigoPostal">Codigo Postal</span></th>
+            <th><span jhiTranslate="hjisterapp1App.ubicacion.ciudad">Ciudad</span></th>
+            <th><span jhiTranslate="hjisterapp1App.ubicacion.stateProvince">State Province</span></th>
+            <th><span jhiTranslate="hjisterapp1App.ubicacion.provincia">Provincia</span></th>
+            <th><span jhiTranslate="hjisterapp1App.ubicacion.nombreUbicacion">Nombre Ubicacion</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let ubicacion of ubicacions ;trackBy: trackId">
+                <td><a [routerLink]="['/ubicacion', ubicacion.id, 'view' ]">{{ubicacion.id}}</a></td>
+                <td>{{ubicacion.calle}}</td>
+                <td>{{ubicacion.codigoPostal}}</td>
+                <td>{{ubicacion.ciudad}}</td>
+                <td>{{ubicacion.stateProvince}}</td>
+                <td>
+                    <div *ngIf="ubicacion.provincia">
+                        <a [routerLink]="['/provincia', ubicacion.provincia?.id, 'view' ]" >{{ubicacion.provincia?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="ubicacion.nombreUbicacion">
+                        <a [routerLink]="['/department', ubicacion.nombreUbicacion?.id, 'view' ]" >{{ubicacion.nombreUbicacion?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/ubicacion', ubicacion.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/ubicacion', ubicacion.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/ubicacion', { outlets: { popup: ubicacion.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
