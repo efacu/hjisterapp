@@ -1,0 +1,50 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "hjisterapp1",
+    "packageName": "com.mynegocio.app",
+    "packageFolder": "com/mynegocio/app",
+    "serverPort": 8080,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "infinispan",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mariadb",
+    "searchEngine": "elasticsearch",
+    "enableSwaggerCodegen": "true",
+    "messageBroker": "kafka",
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": [
+      "en",
+      "pt-br",
+      "es"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.3.0",
+    "jwtSecretKey": "NTE1MjljOWFkZGNjNmRmNGFlM2FhMzUyOTJmZWExOGZjNDRlMGU1ZmYwZjVhYjEyYzA0Njc4MDE3MTEzNmQ2NDAwYzY3YTYzMTUzNzUwNDZlYjNhMDZhMDNlY2FmMTZiN2E0ZGZjYmViMGY0ZTA2YWMzOThiZmI0ZjMzNWI3YzU=",
+    "embeddableLaunchScript": false,
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "blueprints": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "efacu",
+  "repository-name": "hjisterapp"
+}
