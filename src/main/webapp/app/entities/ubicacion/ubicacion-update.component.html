@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-ubicacion-heading" jhiTranslate="hjisterapp1App.ubicacion.home.createOrEditLabel">Create or edit a Ubicacion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hjisterapp1App.ubicacion.calle" for="field_calle">Calle</label>
+                    <input type="text" class="form-control" name="calle" id="field_calle"
+                           formControlName="calle"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hjisterapp1App.ubicacion.codigoPostal" for="field_codigoPostal">Codigo Postal</label>
+                    <input type="text" class="form-control" name="codigoPostal" id="field_codigoPostal"
+                           formControlName="codigoPostal"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hjisterapp1App.ubicacion.ciudad" for="field_ciudad">Ciudad</label>
+                    <input type="text" class="form-control" name="ciudad" id="field_ciudad"
+                           formControlName="ciudad"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hjisterapp1App.ubicacion.stateProvince" for="field_stateProvince">State Province</label>
+                    <input type="text" class="form-control" name="stateProvince" id="field_stateProvince"
+                           formControlName="stateProvince"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hjisterapp1App.ubicacion.provincia" for="field_provincia">Provincia</label>
+                    <select class="form-control" id="field_provincia" name="provincia" formControlName="provincia">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="provinciaOption.id === editForm.get('provincia').value?.id ? editForm.get('provincia').value : provinciaOption" *ngFor="let provinciaOption of provincias; trackBy: trackProvinciaById">{{provinciaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hjisterapp1App.ubicacion.nombreUbicacion" for="field_nombreUbicacion">Nombre Ubicacion</label>
+                    <select class="form-control" id="field_nombreUbicacion" name="nombreUbicacion" formControlName="nombreUbicacion">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="departmentOption.id === editForm.get('nombreUbicacion').value?.id ? editForm.get('nombreUbicacion').value : departmentOption" *ngFor="let departmentOption of nombreubicacions; trackBy: trackDepartmentById">{{departmentOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
